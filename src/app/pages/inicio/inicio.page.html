@@ -1,0 +1,29 @@
+<ion-content>
+  <div class="container">
+    <div class="left-image">
+      <img
+        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvhWtMr9t-o1OnbjWaB5VQLOr7yEV8BqlVCw&s"
+        alt="Dulces"
+        class="left-img"
+      />
+    </div>
+
+    <div class="login-box">
+      <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f1b120f6004d9660050e298504a4e9a5~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=0b491f23&x-expires=1750464000&x-signature=f8CdhB35vHCydtU644GniDObdU4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva" alt="Logo Dulcería" class="logo" />
+      <h2> EL SUSPIRO</h2>
+
+      <label>Usuario:</label>
+      <input type="text" [(ngModel)]="usuario" />
+
+      <label>Contraseña:</label>
+      <input type="password" [(ngModel)]="contrasena" />
+
+      <button (click)="login()">Entrar</button>
+      <p class="mensaje">{{ mensaje }}</p>
+    </div>
+  </div>
+</ion-content>
+<head>
+  <!-- ...otras etiquetas... -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
+</head>

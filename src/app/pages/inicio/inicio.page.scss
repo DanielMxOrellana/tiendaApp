@@ -1,0 +1,134 @@
+// Aplica la fuente Montserrat a todo el login
+body, ion-content, .container, .login-box, h2, label, input, button, .mensaje {
+  font-family: 'Montserrat', Arial, sans-serif;
+}
+
+/* ----- Contenedor general ----- */
+ion-content, .container {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(135deg, #dceefd, #f5fafd);
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+/* ----- Imagen lateral izquierda ----- */
+.left-image {
+  flex: 0 0 35%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background: transparent;
+}
+
+.left-img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* ----- Caja de login ----- */
+.login-box {
+  flex: 1;
+  background: #ffffff;
+  padding: 2rem;
+  border-radius: 0 16px 16px 0;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-height: 90vh;
+  max-width: 350px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ----- Logo de la dulcería ----- */
+.logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+/* ----- Estilos de texto y formulario ----- */
+h2 {
+  color: #2b6cb0;
+  font-size: 2rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+label {
+  align-self: flex-start;
+  margin: 0.5rem 0 0.2rem;
+  font-weight: bold;
+  color: #2b6cb0;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  border: 2px solid #a9d0f5;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+  box-sizing: border-box;
+}
+
+/* ----- Botón ----- */
+button {
+  width: 100%;
+  background: #2b6cb0;
+  color: white;
+  border: none;
+  padding: 12px;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+button:hover {
+  background-color: #1a4f8b;
+}
+
+/* ----- Mensaje de error o información ----- */
+.mensaje {
+  margin-top: 1rem;
+  text-align: center;
+  color: #cc0000;
+  font-weight: bold;
+}
+
+/* ----- Responsive para pantallas pequeñas ----- */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .left-image {
+    display: none;
+  }
+
+  .login-box {
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+    width: 90%;
+    max-width: 400px;
+  }
+}
