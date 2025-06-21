@@ -1,0 +1,110 @@
+ion-header {
+  --background: #9b4dca;
+  --color: rgb(10, 10, 10);
+}
+
+ion-title {
+  font-weight: 700;
+  font-size: 1.5rem;
+  margin-left: 8px;
+  color: rgb(2, 2, 2);
+  display: flex;
+  align-items: center;
+}
+
+ion-avatar img {
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+}
+
+ion-searchbar {
+  margin: 16px 0;
+  --background: #f7e5ff;
+  --border-radius: 12px;
+  --placeholder-color: #9b4dca;
+}
+
+ion-list {
+  background: #f7e5ff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  margin-bottom: 16px;
+  padding: 0;
+}
+
+ion-item {
+  --background: transparent;
+  margin: 4px 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+  border-radius: 12px;
+  transition: background-color 0.3s ease;
+}
+
+ion-item:hover {
+  background-color: #64a8ae33;
+}
+
+ion-label h2, ion-label h3 {
+  margin: 0;
+  color: #4a148c;
+}
+
+ion-button {
+  --background: #8e44ad;
+  --color: white;
+  border-radius: 12px;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: background-color 0.3s ease;
+}
+
+ion-button:hover {
+  --background: #6f2a9a;
+}
+
+ion-button[color="danger"] {
+  --background: #d9534f;
+}
+
+ion-button[color="danger"]:hover {
+  --background: #c9302c;
+}
+
+.carrito-pequeno {
+  max-width: 320px;
+  margin: 20px auto;
+  padding: 16px;
+  background-color: #f7e5ff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+  overflow-y: auto;
+}
+
+.btn-pedidos-fixed {
+  position: fixed;
+  bottom: 16px;
+  left: 16px;
+  right: 16px;
+  z-index: 9999;
+}
+.logo-avatar {
+  width: 48px;
+  height: 48px;
+  margin-right: 12px;
+}
+
+.logo-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+ion-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #1a237e; /* azul oscuro visible */
+  display: flex;
+  align-items: center;
+}

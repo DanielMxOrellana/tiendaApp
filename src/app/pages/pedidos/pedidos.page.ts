@@ -1,22 +1,21 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
-import { PedidosService } from 'src/app/services/pedidos.service';
+import { IonContent, IonHeader, IonTitle, IonToolbar } from '@ionic/angular/standalone';
 
 @Component({
   selector: 'app-pedidos',
-  templateUrl: './pedidos.page.html',
   standalone: true,
-  imports: [IonicModule, CommonModule], // <-- Importa los módulos aquí
+  imports: [CommonModule, IonContent, IonHeader, IonTitle, IonToolbar],
+  template: `
+    <ion-header>
+      <ion-toolbar>
+        <ion-title>Pedidos</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content class="ion-padding">
+      <h2>Página de pedidos</h2>
+      <p>Aquí podrás revisar tus pedidos y continuar con el proceso.</p>
+    </ion-content>
+  `
 })
-export class PedidosPage implements OnInit {
-  pedidos: any[] = [];
-
-  constructor(private pedidosService: PedidosService) {}
-
-  ngOnInit() {
-    this.pedidosService.obtenerPedidos().subscribe(data => {
-      this.pedidos = data as any[];
-    });
-  }
-}
+export class PedidosPage {}
