@@ -18,8 +18,8 @@ export class InicioPage {
   constructor(private router: Router) {}
 
   login() {
-    const usuarioValido = 'Daniel';
-    const contrasenaValida = '1234';
+    const usuarioValido = '';
+    const contrasenaValida = '';
 
     if (this.usuario === usuarioValido && this.contrasena === contrasenaValida) {
       this.mensaje = '¡Login exitoso!';

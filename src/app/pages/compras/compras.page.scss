@@ -1,110 +1,210 @@
-ion-header {
-  --background: #9b4dca;
-  --color: rgb(10, 10, 10);
-}
-
 ion-title {
-  font-weight: 700;
-  font-size: 1.5rem;
-  margin-left: 8px;
-  color: rgb(2, 2, 2);
-  display: flex;
-  align-items: center;
+  font-size: 1.8rem;
+  font-weight: bold;
 }
 
-ion-avatar img {
+.logo-avatar img {
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  width: 36px;
-  height: 36px;
 }
 
-ion-searchbar {
-  margin: 16px 0;
-  --background: #f7e5ff;
-  --border-radius: 12px;
-  --placeholder-color: #9b4dca;
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 16px;
+  margin-top: 16px;
 }
 
-ion-list {
-  background: #f7e5ff;
+.producto-card {
+  background: #fff;
   border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  margin-bottom: 16px;
-  padding: 0;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 12px;
+  text-align: center;
+  transition: transform 0.2s;
 }
 
-ion-item {
-  --background: transparent;
-  margin: 4px 0;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+.producto-card:hover {
+  transform: scale(1.03);
+}
+
+.img-dulce {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
   border-radius: 12px;
-  transition: background-color 0.3s ease;
 }
 
-ion-item:hover {
-  background-color: #64a8ae33;
+.info-dulce h2 {
+  font-size: 1.1rem;
+  margin: 10px 0 4px;
 }
 
-ion-label h2, ion-label h3 {
-  margin: 0;
-  color: #4a148c;
-}
-
-ion-button {
-  --background: #8e44ad;
-  --color: white;
-  border-radius: 12px;
-  font-weight: 600;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
-  transition: background-color 0.3s ease;
-}
-
-ion-button:hover {
-  --background: #6f2a9a;
-}
-
-ion-button[color="danger"] {
-  --background: #d9534f;
-}
-
-ion-button[color="danger"]:hover {
-  --background: #c9302c;
+.info-dulce p {
+  margin-bottom: 10px;
+  color: #666;
+  font-weight: 500;
 }
 
 .carrito-pequeno {
-  max-width: 320px;
-  margin: 20px auto;
-  padding: 16px;
-  background-color: #f7e5ff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
-  overflow-y: auto;
+  margin-top: 24px;
 }
 
 .btn-pedidos-fixed {
   position: fixed;
   bottom: 16px;
-  left: 16px;
-  right: 16px;
-  z-index: 9999;
+  left: 0;
+  right: 0;
+  padding: 0 16px;
+  z-index: 10;
 }
-.logo-avatar {
-  width: 48px;
-  height: 48px;
-  margin-right: 12px;
-}
-
-.logo-avatar img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  border-radius: 50%;
+ion-content {
+  padding-bottom: 100px; // Deja espacio para ver el total y que el botón no lo tape
 }
 
-ion-title {
-  font-size: 1.6rem;
-  font-weight: 700;
-  color: #1a237e; /* azul oscuro visible */
+.btn-pedidos-fixed {
+  position: fixed;
+  bottom: 16px;
+  left: 0;
+  right: 0;
+  padding: 0 16px;
+  z-index: 999;
+  background: white; // opcional para que no se superponga con contenido
+}
+.total-carrito {
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: #f8f8f8;
+  margin-top: 8px;
+  border-top: 1px solid #ddd;
+}
+.container-login {
   display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  font-family: 'sans-serif';
+  background-color: #f0faff; /* Fondo general azul pastel muy claro */
+}
+
+.left-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
   align-items: center;
+  background-color: #e0f7fa; /* Azul pastel agua */
+}
+
+.left-img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
+.login-box {
+  flex: 1;
+  padding: 40px;
+  background-color: #f0faff; /* Fondo caja login */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box .logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 2px solid #81d4fa; /* Borde azul pastel */
+}
+
+.login-box h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #0288d1; /* Azul pastel profundo */
+}
+
+.bienvenida {
+  text-align: center;
+  background-color: #e0f7fa; /* Azul pastel suave */
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  color: #0277bd; /* Azul fuerte pero pastel */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.bienvenida h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #01579b;
+}
+
+.bienvenida p {
+  font-size: 1rem;
+  margin: 4px 0;
+}
+
+.propietaria {
+  font-style: italic;
+  color: #0288d1;
+}
+
+.login-box label {
+  align-self: flex-start;
+  font-weight: bold;
+  margin-top: 12px;
+  color: #1565c0; /* Azul grisáceo */
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b3e5fc; /* Borde azul claro */
+  border-radius: 8px;
+  margin-top: 4px;
+  font-size: 1rem;
+  background-color: #ffffff;
+}
+
+.login-box button {
+  margin-top: 24px;
+  background-color: #81d4fa; /* Azul pastel */
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.login-box button:hover {
+  background-color: #4fc3f7; /* Azul celeste */
+}
+
+.mensaje {
+  margin-top: 12px;
+  color: #d32f2f; /* Rojo pastel para errores */
+  font-weight: 500;
+}
+
+/* Responsive: en móvil apila la imagen y el login */
+@media (max-width: 768px) {
+  .container-login {
+    flex-direction: column;
+  }
+
+  .left-image {
+    display: none;
+  }
+
+  .login-box {
+    flex: none;
+    width: 100%;
+    padding: 32px 16px;
+  }
 }

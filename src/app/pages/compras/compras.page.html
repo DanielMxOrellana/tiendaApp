@@ -7,8 +7,6 @@
   </ion-toolbar>
 </ion-header>
 
-
-
 <ion-content class="ion-padding">
   <ion-searchbar
     [(ngModel)]="busqueda"
@@ -16,18 +14,16 @@
     debounce="300"
   ></ion-searchbar>
 
-  <ion-list>
-    <ion-item *ngFor="let dulce of dulcesFiltrados">
-      <ion-avatar slot="start">
-        <img [src]="dulce.imagen" alt="{{ dulce.nombre }}" />
-      </ion-avatar>
-      <ion-label>
+  <div class="grid-productos">
+    <div class="producto-card" *ngFor="let dulce of dulcesFiltrados">
+      <img [src]="dulce.imagen" alt="{{ dulce.nombre }}" class="img-dulce"/>
+      <div class="info-dulce">
         <h2>{{ dulce.nombre }}</h2>
         <p>Precio: ${{ dulce.precio.toFixed(2) }}</p>
-      </ion-label>
-      <ion-button slot="end" (click)="agregarAlCarrito(dulce)">Agregar</ion-button>
-    </ion-item>
-  </ion-list>
+        <ion-button expand="block" (click)="agregarAlCarrito(dulce)">Agregar</ion-button>
+      </div>
+    </div>
+  </div>
 
   <hr />
 
@@ -52,9 +48,23 @@
   </div>
 </ion-content>
 
-<!-- Botón fijo para ir a pedidos -->
 <div class="btn-pedidos-fixed">
   <ion-button expand="block" (click)="irAPedidos()" [disabled]="carrito.length === 0">
-    Ir a Pedidos
+    Hacer Pedido ({{ carrito.length }})
   </ion-button>
 </div>
+<ion-list *ngIf="carrito.length > 0; else vacio">
+  <ion-item *ngFor="let dulce of carrito; let i = index">
+    <ion-label>
+      <h3>{{ dulce.nombre }}</h3>
+      <p>Precio: ${{ dulce.precio.toFixed(2) }}</p>
+    </ion-label>
+    <ion-button color="danger" size="small" slot="end" (click)="quitarDelCarrito(i)">Quitar</ion-button>
+  </ion-item>
+
+  <!-- TOTAL -->
+  <ion-item lines="none" class="ion-text-end total-carrito">
+    <ion-label><strong>Total:</strong></ion-label>
+    <ion-label slot="end"><strong>${{ total.toFixed(2) }}</strong></ion-label>
+  </ion-item>
+</ion-list>

@@ -1,16 +1,35 @@
-<ion-content>
-  <div class="container">
+<ion-content class="ion-no-padding">
+  <div class="container-login">
     <div class="left-image">
-      <img
-        src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvhWtMr9t-o1OnbjWaB5VQLOr7yEV8BqlVCw&s"
-        alt="Dulces"
-        class="left-img"
-      />
+      <video 
+        class="left-video" 
+        controls 
+        autoplay 
+        muted 
+        loop
+        playsinline
+      >
+        <source src="assets/Videos/video1.mp4" type="video/mp4" />
+        Tu navegador no soporta la reproducción de video.
+      </video>
     </div>
 
     <div class="login-box">
-      <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f1b120f6004d9660050e298504a4e9a5~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=0b491f23&x-expires=1750464000&x-signature=f8CdhB35vHCydtU644GniDObdU4%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva" alt="Logo Dulcería" class="logo" />
-      <h2> EL SUSPIRO</h2>
+      <img
+        src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f1b120f6004d9660050e298504a4e9a5~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=8f4b98a5&x-expires=1750705200&x-signature=bcQ0hdWfFE8RQCZSMlT%2B7CJVRjc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva"
+        alt="Logo Dulcería"
+        class="logo"
+      />
+      <h2>EL SUSPIRO</h2>
+
+      <div class="bienvenida">
+        <h3>¡Bienvenido a Dulcería El Suspiro!</h3>
+        <p>
+          Un rincón dulce lleno de sabores y momentos especiales. Nos alegra tenerte aquí. 
+          Explora nuestra selección de dulces con cariño y alegría.
+        </p>
+        <p class="propietaria">Con cariño, <strong>Mariana Inés Orellana Durán</strong></p>
+      </div>
 
       <label>Usuario:</label>
       <input type="text" [(ngModel)]="usuario" />
@@ -23,7 +42,3 @@
     </div>
   </div>
 </ion-content>
-<head>
-  <!-- ...otras etiquetas... -->
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap" rel="stylesheet">
-</head>

@@ -1,123 +1,93 @@
-// Aplica la fuente Montserrat a todo el login
-body, ion-content, .container, .login-box, h2, label, input, button, .mensaje {
-  font-family: 'Montserrat', Arial, sans-serif;
-}
-
-/* ----- Contenedor general ----- */
-ion-content, .container {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
-}
-
-.container {
+.container-login {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background: linear-gradient(135deg, #dceefd, #f5fafd);
-  padding: 0 1rem;
-  box-sizing: border-box;
+  flex-direction: row;
+  min-height: 100vh;
+  font-family: 'sans-serif';
+  background-color: #f0faff; // fondo general claro
 }
 
-/* ----- Imagen lateral izquierda ----- */
 .left-image {
-  flex: 0 0 35%;
+  flex: 1;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  background: transparent;
+  background-color: #e0f7fa; // azul pastel agua
 }
 
 .left-img {
-  width: 260px;
-  height: 260px;
-  object-fit: cover;
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  max-width: 500px;
+  height: auto;
 }
 
-/* ----- Caja de login ----- */
 .login-box {
   flex: 1;
-  background: #ffffff;
-  padding: 2rem;
-  border-radius: 0 16px 16px 0;
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  padding: 40px;
+  background-color: #f0faff; // fondo claro caja
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  max-height: 90vh;
-  max-width: 350px;
-  width: 100%;
-  box-sizing: border-box;
+  align-items: center;
 }
 
-/* ----- Logo de la dulcería ----- */
-.logo {
+.login-box .logo {
   width: 120px;
   height: 120px;
   border-radius: 50%;
-  margin-bottom: 1rem;
   object-fit: cover;
+  margin-bottom: 16px;
+  border: 2px solid #81d4fa; // borde azul pastel
 }
 
-/* ----- Estilos de texto y formulario ----- */
-h2 {
-  color: #2b6cb0;
+.login-box h2 {
   font-size: 2rem;
-  text-align: center;
-  margin-bottom: 1rem;
+  margin-bottom: 24px;
+  color: #0288d1; // azul pastel profundo
 }
 
-label {
+.login-box label {
   align-self: flex-start;
-  margin: 0.5rem 0 0.2rem;
   font-weight: bold;
-  color: #2b6cb0;
+  margin-top: 12px;
+  color: #1565c0; // azul grisáceo
 }
 
-input {
+.login-box input {
   width: 100%;
   padding: 10px;
-  border: 2px solid #a9d0f5;
-  border-radius: 20px;
-  margin-bottom: 1rem;
-  box-sizing: border-box;
+  border: 1px solid #b3e5fc; // borde azul claro
+  border-radius: 8px;
+  margin-top: 4px;
+  font-size: 1rem;
+  background-color: #ffffff;
 }
 
-/* ----- Botón ----- */
-button {
-  width: 100%;
-  background: #2b6cb0;
+.login-box button {
+  margin-top: 24px;
+  background-color: #81d4fa; // azul pastel
   color: white;
   border: none;
-  padding: 12px;
-  border-radius: 25px;
-  font-weight: bold;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
   cursor: pointer;
-  margin-top: 0.5rem;
-  transition: background 0.3s ease;
+  width: 100%;
+  transition: background-color 0.2s ease-in-out;
 }
 
-button:hover {
-  background-color: #1a4f8b;
+.login-box button:hover {
+  background-color: #4fc3f7; // azul celeste
 }
 
-/* ----- Mensaje de error o información ----- */
 .mensaje {
-  margin-top: 1rem;
-  text-align: center;
-  color: #cc0000;
-  font-weight: bold;
+  margin-top: 12px;
+  color: #d32f2f; // rojo pastel para errores
+  font-weight: 500;
 }
 
-/* ----- Responsive para pantallas pequeñas ----- */
+/* Responsive */
 @media (max-width: 768px) {
-  .container {
+  .container-login {
     flex-direction: column;
   }
 
@@ -126,9 +96,147 @@ button:hover {
   }
 
   .login-box {
-    border-radius: 16px;
-    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
-    width: 90%;
-    max-width: 400px;
+    flex: none;
+    width: 100%;
+    padding: 32px 16px;
   }
+}
+.container-login {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  font-family: 'sans-serif';
+  background-color: #f0faff;
+}
+
+.left-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #e0f7fa;
+  padding: 16px;
+}
+
+.left-video {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.login-box {
+  flex: 1;
+  padding: 40px;
+  background-color: #f0faff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-box .logo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 16px;
+  border: 2px solid #81d4fa;
+}
+
+.login-box h2 {
+  font-size: 2rem;
+  margin-bottom: 24px;
+  color: #0288d1;
+}
+
+.bienvenida {
+  text-align: center;
+  background-color: #e0f7fa;
+  border-radius: 12px;
+  padding: 16px 24px;
+  margin-bottom: 24px;
+  color: #0277bd;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.bienvenida h3 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+  color: #01579b;
+}
+
+.bienvenida p {
+  font-size: 1rem;
+  margin: 4px 0;
+}
+
+.propietaria {
+  font-style: italic;
+  color: #0288d1;
+}
+
+.login-box label {
+  align-self: flex-start;
+  font-weight: bold;
+  margin-top: 12px;
+  color: #1565c0;
+}
+
+.login-box input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #b3e5fc;
+  border-radius: 8px;
+  margin-top: 4px;
+  font-size: 1rem;
+  background-color: #ffffff;
+}
+
+.login-box button {
+  margin-top: 24px;
+  background-color: #81d4fa;
+  color: white;
+  border: none;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  width: 100%;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.login-box button:hover {
+  background-color: #4fc3f7;
+}
+
+.mensaje {
+  margin-top: 12px;
+  color: #d32f2f;
+  font-weight: 500;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .container-login {
+    flex-direction: column;
+  }
+
+  .left-image {
+    display: none;
+  }
+
+  .login-box {
+    flex: none;
+    width: 100%;
+    padding: 32px 16px;
+  }
+}
+.left-video {
+  width: auto;
+  height: 400px;         /* altura fija para formato vertical */
+  max-height: 90vh;      /* que no pase del 90% de la altura de pantalla */
+  aspect-ratio: 9 / 16;  /* proporción vertical tipo retrato */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
