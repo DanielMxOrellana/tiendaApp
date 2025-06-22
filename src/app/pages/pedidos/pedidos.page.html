@@ -1,13 +1,80 @@
+<div class="logo-container">
+  <img src="https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/f1b120f6004d9660050e298504a4e9a5~tplv-tiktokx-cropcenter:1080:1080.jpeg?dr=14579&refresh_token=8f4b98a5&x-expires=1750705200&x-signature=bcQ0hdWfFE8RQCZSMlT%2B7CJVRjc%3D&t=4d5b0474&ps=13740610&shp=a5d48078&shcp=81f88b70&idc=maliva" alt="Logo Dulcería" style="max-width: 120px; max-height: 120px; display: block; margin: 0 auto;" />
+</div>
 <ion-header>
   <ion-toolbar>
     <ion-title>Pedidos</ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-list>
-    <ion-item *ngFor="let pedido of pedidos">
-      {{ pedido.nombre }} - {{ pedido.fecha }}
+<ion-content class="ion-padding">
+
+  <form (ngSubmit)="confirmarPedido()">
+
+    <ion-item>
+      <ion-label position="floating">Nombre</ion-label>
+      <ion-input [(ngModel)]="nombre" name="nombre" required></ion-input>
     </ion-item>
-  </ion-list>
+
+    <ion-item>
+      <ion-label position="floating">Cédula</ion-label>
+      <ion-input type="number" [(ngModel)]="cedula" name="cedula" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Teléfono</ion-label>
+      <ion-input type="tel" [(ngModel)]="telefono" name="telefono" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Correo</ion-label>
+      <ion-input type="email" [(ngModel)]="correo" name="correo" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label position="floating">Dirección</ion-label>
+      <ion-input [(ngModel)]="direccion" name="direccion" required></ion-input>
+    </ion-item>
+
+    <ion-item>
+      <ion-label>Tipo de Empaque</ion-label>
+      <ion-select [(ngModel)]="tipoEmpaque" name="tipoEmpaque" interface="popover" placeholder="Seleccione">
+        <ion-select-option value="canasto">Canasto</ion-select-option>
+        <ion-select-option value="funda">Funda</ion-select-option>
+        <ion-select-option value="desechable">Desechable</ion-select-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-list>
+      <ion-item *ngFor="let dulce of carrito; let i = index">
+        <ion-avatar slot="start">
+          <img [src]="dulce.imagen" />
+        </ion-avatar>
+        <ion-label>
+          <h2>{{ dulce.nombre }}</h2>
+          <p>Precio: ${{ dulce.precio }}</p>
+        </ion-label>
+        <ion-button fill="clear" color="danger" slot="end" (click)="quitarProducto(i)">
+          <ion-icon [icon]="trashOutline"></ion-icon>
+        </ion-button>
+      </ion-item>
+    </ion-list>
+
+    <ion-item>
+      <ion-label><strong>Total:</strong></ion-label>
+      <ion-label>${{ total.toFixed(2) }}</ion-label>
+    </ion-item>
+
+    <ion-button expand="block" type="submit" color="primary" class="ion-margin-top">Confirmar Pedido</ion-button>
+    <ion-button expand="block" type="button" color="medium" (click)="cancelarPedido()">Cancelar</ion-button>
+  </form>
+
+  <ion-toast
+    [isOpen]="showToast"
+    [message]="toastMessage"
+    duration="2000"
+    (didDismiss)="showToast = false"
+    color="warning">
+  </ion-toast>
+
 </ion-content>
